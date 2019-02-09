@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Rock Paper Scissors - Austin Jackowski</title>
+  </head>
+  <body>
+    <script>
+
+      // Rock Paper Scissors game run from the console in DevTools
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+}
+
+      function computerPlay(){
+        compChoice = getRandomInt(3); //Choose random number 0 , 1, or 2.
+        return compChoice;      // return 0, 1, or 2.
+      }
+      console.log(computerPlay());
+
+    </script>
+  </body>
+</html>
