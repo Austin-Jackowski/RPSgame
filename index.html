@@ -3,17 +3,19 @@
   <head>
     <meta charset = UTF-8>
     <title> Rock Paper Scissors - Austin Jackowski</title>
+    <link href="main.css" rel="stylesheet"/>
   </head>
   <body>
-    <div>
-      <button>Rock</button>
-      <button>Paper</button>
-      <button>Scissors</button>
+    <div class="btn-container">
+      <button class="btn btn-rock" id="rock">Rock</button>
+      <button class="btn btn-paper" id="paper">Paper</button>
+      <button class="btn btn-scissors" id="scissors">Scissors</button>
     </div>
-    <div>
-      <p class="wins">WIN</p>
-      <p class="losses">LOss</p>
-      <p class="ties">Ties</p>
+    <div class="results-div">
+      <p class="wins" id='win'>Wins:</p>
+      <p class="losses" id="loss">Losses:</p>
+      <p class="ties" id="ties">Ties:</p>
     </div>
+    <script src="core.js"></script>
   </body>
 </html>

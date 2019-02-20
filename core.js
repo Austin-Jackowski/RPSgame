@@ -1,6 +1,22 @@
-// Rock Paper Scissors game run from the console in DevTools
+// VARIABLES
+let wins = 0
+let losses = 0
+let ties = 0
 
-// TODO: remove getRAndomINt and add to computerPlay function via anonymous function
+// QUERY SELECTORS
+const btnRock = document.querySelector('#rock')
+const btnPaper = document.querySelector('#paper')
+const btnScissors = document.querySelector('#scissors')
+const winsPara = document.querySelector('#win')
+const lossPara = document.querySelector('#loss')
+const tiePara = document.querySelector('#ties')
+
+// EVENT LISTENERS
+btnRock.addEventListener('click', () => { playRound('rock', computerPlay()) })
+btnPaper.addEventListener('click', () => { playRound('paper', computerPlay()) })
+btnScissors.addEventListener('click', () => { playRound('scissors', computerPlay()) })
+
+//FUNCTIONS
 function getRandomInt (max) {
   return Math.floor(Math.random() * Math.floor(max))
 }
@@ -16,30 +32,25 @@ function computerPlay () {
       return 'scissors'
   }
 }
-// console.log(computerPlay());
 
 function playRound (playerSelection, computerSelection) {
-  let human = playerSelection.toLowerCase()
-  let comp = computerSelection
+  let human = playerSelection
+  let comp = computerPlay()
 
   if (human == comp) {
     ties += 1
-    console.log('Ties = ' + ties)
-    return "You tied!"
+    tiePara.textContent = `Ties: ${ties}`
+    return 'You tied!'
   } else if (human == 'rock' && comp == 'paper' || human == 'paper' && comp == 'scissors' ||
     human == 'scissors' && comp == 'rock') {
     losses += 1
-    console.log('Losses = ' + losses);
+    lossPara.textContent = `Losses: ${losses}`
     return 'You Lose ' + comp + ' beats ' + human + '!'
   } else {
     wins += 1
-    console.log('Wins = ' + wins)
+    winsPara.textContent = `Wins: ${wins}`
     return 'You win ' + human + ' beats ' + comp + '!'
   }
 }
 
-let wins = 0
-let losses = 0
-let ties = 0
-
-console.log(game())
+// console.log(game())

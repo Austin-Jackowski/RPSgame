@@ -1,0 +1,20 @@
+body {
+  display: relative;
+}
+
+p {
+  display: inline-block;
+}
+
+.btn-container, .results-div {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 20px 20px;
+  display: inline-block;
+  margin: 10px auto;
+  width: 25%;
+}
