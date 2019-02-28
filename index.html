@@ -3,70 +3,19 @@
   <head>
     <meta charset = UTF-8>
     <title> Rock Paper Scissors - Austin Jackowski</title>
+    <link href="main.css" rel="stylesheet"/>
   </head>
   <body>
-    <script>
-
-      // Rock Paper Scissors game run from the console in DevTools
-
-      // TODO: remove getRAndomINt and add to computerPlay function via anonymous function
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-        }
-
-      function computerPlay(){
-        let compChoice = getRandomInt(3); //Choose random number 0 , 1, or 2.
-        switch(compChoice) {
-          case 0:
-            return "rock";
-          case 1:
-            return "paper";
-          case 2:
-            return "scissors";
-        }
-      }
-      //console.log(computerPlay());
-
-       function playRound(playerSelection, computerSelection){
-         let human = playerSelection.toLowerCase();
-         let comp = computerSelection;
-         
-         if(human == comp) {
-           ties += 1;
-           console.log("Ties = " + ties);           
-           return "You tied!";           
-         } else if(human == "rock" && comp =="paper" || human == "paper" && comp =="scissors" || 
-         human == "scissors" && comp == "rock"){
-           losses += 1;
-           console.log("Losses = " + losses);
-           return "You Lose " + comp + " beats " + human + "!"
-         } else {
-           wins += 1;
-           console.log("Wins = " + wins);
-           return "You win " + human + " beats " + comp + "!"
-         }
-       }
-
-       function game(){
-         for(i = 0; i < 5; i++) {
-          let computerSelection = computerPlay();
-          let playerSelection = prompt("Enter rock, paper, or scissors!");
-          playRound(playerSelection, computerSelection);
-         }
-         console.log("Wins = " + wins);
-         console.log("Losses = " + losses);
-         console.log("Ties = " + ties);
-       }
-
-
-
-      
-      let wins = 0;
-      let losses = 0;
-      let ties = 0;
-
-       console.log(game())
-
-    </script>
+    <div class="btn-container">
+      <button class="btn btn-rock" id="rock">Rock</button>
+      <button class="btn btn-paper" id="paper">Paper</button>
+      <button class="btn btn-scissors" id="scissors">Scissors</button>
+    </div>
+    <div class="results-div">
+      <p class="wins" id='win'>Wins:</p>
+      <p class="losses" id="loss">Losses:</p>
+      <p class="ties" id="ties">Ties:</p>
+    </div>
+    <script src="core.js"></script>
   </body>
 </html>
